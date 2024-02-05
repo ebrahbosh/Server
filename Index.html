@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlAsdiQa Project Management Service</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/99a2b89e4f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+      <nav>
+          <img src="logo2.png" class="logo">
+        <ul id="sidemenu">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+      </nav>
+      <div class="header-text">
+        <p>Al Asdiqa Company</p>
+        <h1>
+          Discover unparalleled project management services with<span> Al Asdiqa.</span><br>
+          
+          We specialize in providing comprehensive project management services tailored to meet the unique needs of your business. As a trusted partner, we bring expertise, efficiency
+          ,and a commitment to excellence to every project we undertake.
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div id="about">
+    <div class="row">
+      <div class="about-col-1">
+        <img src="image.png">
+      </div>
+      <div class="about-col-2">
+        <h1 class="sub-title">About Us</h1>
+        <p>
+          Al Asdiqa is a dynamic project management firm dedicated to delivering excellence. Our team, comprising management experts, prioritizes transparency, integrity, and client success.<br>
+          We partner with businesses,
+          providing tailored solutions to navigate project complexities and ensure successful outcomes.
+          With a proven track record, Al Asdiqa is your reliable partner for strategic project management.
+        </p>
+
+        <div class="tab-titles">
+          <p class="tab-links active-link" onclick="opentab('OurValue')"><b>Our Value</b></p>
+          <p class="tab-links" onclick="opentab('OurMission')"><b>Our Mission</b></p>
+        </div>
+        <div class="tab-contents active-tab" id="OurValue">
+          <ul>
+            <li><span>Excellence:</span><br> We strive for excellence in every project, ensuring the highest standards of quality and efficiency.</li>
+            <li><span>Integrity:</span><br> Transparency, honesty, and ethical practices guide our interactions with clients and team members.</li>
+            <li><span>Innovation:</span><br> Embracing the latest technologies and methodologies, we foster a culture of innovation to stay ahead in a rapidly changing landscape.</li>
+          </ul>
+        </div>
+        <div class="tab-contents" id="OurMission">
+          <ul>
+            <li><span>Precision in Execution:</span><br> We are dedicated to the precise execution of projects, ensuring meticulous attention to detail and adherence to timelines.</li>
+            <li><span>Client Empowerment:</span><br> Our mission is to empower our clients by providing tailored solutions that align with their objectives, fostering growth and success.</li>
+            <li><span>Continuous Innovation:</span><br> Striving for continuous improvement, we embrace innovation to adapt and evolve, delivering cutting-edge project management solutions.</li>
+            <li><span>Reliability and Trust:</span><br> Building on a foundation of reliability and trust, we aim to be the steadfast partner you can depend on for the seamless execution of your projects.</li>
+          </ul>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services">
+    <div class="container">
+        <h1 class="sub-title">Our Services</h1>
+        <div class="services-list">
+          <div>
+            <h2>Tailored Project Planning and Execution</h2>
+            <p>Our experienced team specializes in crafting project plans tailored to your unique needs,
+              ensuring precise execution from start to finish.
+            </p>
+          </div>
+          <div>
+            <h2>Transparent Communication and Collaboration</h2>
+            <p>We value open communication and collaborative partnerships. 
+              Our approach fosters a culture where your insights are valued, 
+              ensuring that every project aligns with your vision.
+            </p>
+          </div>
+          <div>
+            <h2>Reliability and Trustworthy Partnerships</h2>
+            <p>Built on a foundation of reliability and trust, 
+              we strive to be the dependable partner you can count on for the seamless execution of your projects, 
+              fostering long-lasting relationships.
+            </p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left">
+          <h1 class="sub-title">Contact Me</h1>
+          <p>info@AlAsdiqa.com</p>
+          <p>+97145294627</p>
+          <p>Address: Dubai - Deira - Al Itihad St.Mountin Cate Tadbeer Build. 2st Floor office No 202-12</p>
+          <button onclick="window.open('https://maps.app.goo.gl/882cWnAx2cWpjcHF7', '_blank')" class="btn">Location Map</button>        </div>
+        <div class="contact-right">
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="email" name="Email" placeholder="Your Email" required>
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+          <spam id="msg"></spam>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="copywrite">
+    <p>Copywrite © 2024 Al Asdiqa.info All rights reserved. | Privacy Policy | Terms of Service. </p>
+  </div>
+
+  <script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+      for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+      }
+      for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+    
+  </script>
+
+  <script>
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+      sidemeu.style.right = "0";
+    }
+    function closemenu(){
+      sidemeu.style.right = "-200px"
+    }
+
+  </script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwPfYXPwY4wATJzOgrrHsS5lApI1Tb1KiM-FJ8yGaRyVfk1eDC_mrCgj1UNOUgFJ1jL6g/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Submitted Message, Thank you contacting us. We will respond soon."
+        setTimeout(function(){
+          msg.innerHTML = ""
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+
+</body>
+</html>
